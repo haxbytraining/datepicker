@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style>
+	input#date1 {
+		display: inline-block;
+		position: relative;
+	}
+	
+	input#date2 {
+		display: inline-block;
+		position: relative;
+	}
+	
+	input#date3 {
+		display: inline-block;
+		position: relative;
+	}
+	
+	input[type="date"]::-webkit-calendar-picker-indicator {
+		background: transparent;
+    	bottom: 0;
+    	color: transparent;
+    	cursor: pointer;
+    	height: auto;
+    	left: 0;
+    	position: absolute;
+    	right: 0;
+    	top: 0;
+    	width: auto;
+	}
+	</style>
+	
+<body>
+	<p>
+		<label>Sunday, November 14, 2027</label><br>
+		<input class="w3-input w3-border w3-round-large" name="date1" type="date" id="date1" onclick="updateDate1()" oninput="updateVar1()">
+	</p>
+	<p id="d1"></p><br><br>
+	<p>
+		<label>Monday, April 04, 2022</label><br>
+		<input class="w3-input w3-border w3-round-large" name="date2" type="date" id="date2" onclick="updateDate2()" oninput="updateVar2()">
+	</p>
+	<p id="d2">	</p><br><br>
+	<p>
+		<label>Tuesday, July 23, 2024</label><br>
+		<input class="w3-input w3-border w3-round-large" name="date3" type="date" id="date3" onclick="updateDate2()" oninput="updateVar3()">
+	</p>
+	<p id="d3">	</p>	
+		
+
+<script>
+
+	function updateDate1(){
+		document.getElementById("date1").value = "2027-11-02";
+	}
+
+	function updateDate2(){
+		document.getElementById("date2").value = "2022-03-25";
+	}
+
+	function updateDate3(){
+		document.getElementById("date3").value = "2024-06-30";
+	}
+
+function updateVar1() {
+	var x = document.getElementById("date1").value;
+	var player = parent.GetPlayer();
+	player.SetVar("date1",x);
+}
+
+function updateVar2() {
+	var y = document.getElementById("date2").value;
+	var player = parent.GetPlayer();
+	player.SetVar("date2",y);
+}
+
+function updateVar3() {
+	var z = document.getElementById("date3").value;
+	var player = parent.GetPlayer();
+	player.SetVar("date3",z);
+}
+</script>
+
+</body>
+</html>
